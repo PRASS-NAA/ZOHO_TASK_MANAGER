@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Task {
     private Long Id;
 
@@ -5,11 +7,13 @@ public class Task {
 
     private String taskDescription;
 
-    Task(Long id, String name, String taskDescription){
+    private LocalDate dueDate;
+
+    Task(Long id, String name, String taskDescription, LocalDate dueDate){
         this.Id=id;
         this.Name=name;
         this.taskDescription=taskDescription;
-
+        this.dueDate = dueDate;
     }
 
     public Long getId() {
@@ -22,5 +26,9 @@ public class Task {
     public String getDescription()
     {
         return this.taskDescription;
+    }
+
+    public LocalDate getDueDate() {
+        return this.dueDate;
     }
 }
