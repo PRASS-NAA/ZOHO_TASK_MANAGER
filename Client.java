@@ -25,7 +25,9 @@ public class Client {
                     input.nextLine();
                     System.out.println("Enter Task Name : ");
                     String name = input.nextLine();
-                    tm.addTask(new Task(id, name));
+                    System.out.println("Enter Task description : ");
+                    String descp = input.nextLine();
+                    tm.addTask(new Task(id, name,descp));
                     System.out.println("Task added successfully");
                     break;
                 case 2:
@@ -40,7 +42,7 @@ public class Client {
                     case 3:
                         List<Task> display=tm.getTasks();
 
-                        display.stream().forEach(s->System.out.println("Task ID : " + s.getId()+" | " + "Task Name : " +s.getName()));
+                        display.stream().forEach(s->System.out.println("Task ID : " + s.getId()+" | " + "Task Name : " +s.getName() + " | " + " Task Description : "+ s.getDescription()));
 
                         break;
 

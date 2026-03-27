@@ -3,16 +3,24 @@ public class Task {
 
     private String Name;
 
-    Task(Long id, String name){
-        Id=id;
-        Name=name;
+    private String taskDescription;
+
+    Task(Long id, String name, String taskDescription){
+        this.Id=id;
+        this.Name=name;
+        this.taskDescription=taskDescription;
+
     }
 
     public Long getId() {
-        return Id;
+        return this.Id;
     }
 
     public String getName() {
-        return Name;
+        return this.Name;
+    }
+    public String getDescription()
+    {
+        return this.taskDescription;
     }
 }

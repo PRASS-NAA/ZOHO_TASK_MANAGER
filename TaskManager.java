@@ -20,19 +20,19 @@ public class TaskManager
 
     Boolean addTask(Task task)
     {
-        return tasks.add(task);
+        return this.tasks.add(task);
     }
 
     Boolean removeTask(Long taskId)
     {
-        Optional <Task> present = tasks.stream().filter(s -> s.getId() == taskId).findFirst();
+        Optional <Task> present = this.tasks.stream().filter(s -> s.getId() == taskId).findFirst();
 
         if(present.isEmpty())
         {
             System.out.println("Invalid id");
             return false;
         }else{
-            tasks.remove(present.get());
+            this.tasks.remove(present.get());
             return true;
         }
 
@@ -41,6 +41,6 @@ public class TaskManager
 
     List<Task> getTasks()
     {
-        return tasks;
+        return this.tasks;
     }
 }
