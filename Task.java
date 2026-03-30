@@ -9,11 +9,18 @@ public class Task {
 
     private LocalDate dueDate;
 
+    private Priority priority;
+
     Task(Long id, String name, String taskDescription, LocalDate dueDate){
+        this(id,name,taskDescription,dueDate,Priority.MEDIUM);
+    }
+
+    Task(Long id, String name, String taskDescription, LocalDate dueDate, Priority priority){
         this.Id=id;
         this.Name=name;
         this.taskDescription=taskDescription;
         this.dueDate = dueDate;
+        this.priority=priority;
     }
 
     public Long getId() {
@@ -30,5 +37,10 @@ public class Task {
 
     public LocalDate getDueDate() {
         return this.dueDate;
+    }
+
+    public Priority getPriority()
+    {
+        return this.priority;
     }
 }
